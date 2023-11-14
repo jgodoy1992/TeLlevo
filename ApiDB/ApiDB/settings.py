@@ -84,9 +84,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'tellevodb',
-        'USER': 'te_llevo',
+        'USER': 'admin',
         'PASSWORD': 'tellevo.1',
-        'HOST': '127.0.0.1',
+        'HOST': 'tellevo-db.cwlgdorsa0ve.us-east-2.rds.amazonaws.com',
         'PORT': '3306',
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
