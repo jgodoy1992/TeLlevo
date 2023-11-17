@@ -15,15 +15,15 @@
   <mat-progress-bar mode="determinate" [value]="progVal" [@progressAnimation]="loginAnimation"></mat-progress-bar>
         <ion-item>
           <ion-label position="floating">Usuario <ion-icon name="person"></ion-icon></ion-label>
-          <ion-input type="text" [(ngModel)]="username" required ></ion-input>
+          <ion-input type="text" #usernameInput required ></ion-input>
           
         </ion-item>
         <ion-item>
           <ion-label  position="floating">Contraseña <ion-icon  name="lock-closed"></ion-icon>  </ion-label>
-          <ion-input type="password" [(ngModel)]="password" required></ion-input>
+          <ion-input type="password" #passwordInput required></ion-input>
           
           
         </ion-item>
-        <ion-button  fill="clear" size="full" (click)="startAnimation()">Ingresar</ion-button>
+        <ion-button  fill="clear" size="full" (click)="startAnimation(usernameInput.value, passwordInput.value)">Ingresar</ion-button>
         <ion-button  fill="clear" size="full" href="/registro">Registrar</ion-button>
 </ion-content>

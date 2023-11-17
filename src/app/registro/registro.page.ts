@@ -3,6 +3,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 import { ApiDbService } from '../services/api-db.service';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.page.html',
@@ -17,43 +18,38 @@ import { Router } from '@angular/router';
 })
 export class RegistroPage implements OnInit {
 
-  username: string='';
-  email: string='';
-  password: string='';
+  // username: string = '';
+  // email: string = '';
+  // password: string = '';
 
-  loginAnimation:'start' | 'end'='start';
-  progVal: number =0;
-  
-  constructor(private apiService:ApiDbService, public router:Router) { }
+  loginAnimation: 'start' | 'end' = 'start';
+  progVal: number = 0;
+
+  constructor(private apiService: ApiDbService, public router: Router) { }
 
   ngOnInit() {
   }
 
-  registro(){
-    const userData = {
-      username:this.username,
-      email:this.email,
-      password:this.password
-    }
+  registro(username: any, email: any, password: any) {
 
-    this.apiService.registroUsuario(userData).subscribe(
-      (response)=>{
+    this.apiService.registroUsuario(username, email, password).subscribe(
+      (response) => {
         this.router.navigate(['/login'])
         console.log('Registro Exitoso', response)
       },
-      (error)=>{
+      (error) => {
         console.error('Error al registrar usuario', error);
       }
     )
   }
 
-  startAnimation(){
-    this.loginAnimation='end';
-    this.progVal=100;
-    setTimeout(()=>{
-      this.registro();
-      this.loginAnimation='start';
-      this.progVal=0;
+  startAnimation(username: any, email: any, password: any) {
+    this.loginAnimation = 'end';
+    this.progVal = 100;
+    setTimeout(() => {
+      this.registro(username, email, password);
+      this.loginAnimation = 'start';
+      this.progVal = 0;
     }, 1000);
   }
 
