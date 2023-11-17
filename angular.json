@@ -10,6 +10,12 @@
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
+        "e2e": {
+          "builder": "@angular-builders/protractor:protractor",
+          "options": {
+            "protractorConfig": "protractor.conf.js",
+            "devServerTarget": "app:serve"
+          }},
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
