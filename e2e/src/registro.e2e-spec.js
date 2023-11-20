@@ -5,7 +5,7 @@ xdescribe('Pgina Registro', () => {
         browser.get('/')
     })
 
-    xit('debe navegar a la pagina de registro', () => {
+    it('debe navegar a la pagina de registro', () => {
         const botonRegistro = element(by.css('[data-test="boton-registro"]'))
         botonRegistro['click']()
 
