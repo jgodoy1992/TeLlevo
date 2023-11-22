@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { Router,NavigationExtras, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { AutenticacionService } from '../services/autenticacion.service';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -18,32 +19,52 @@ import { AutenticacionService } from '../services/autenticacion.service';
 export class HomePage {
 
   username: string = '';
+  authBool: boolean = false;
+  loginAnimation: 'start' | 'end' = 'start';
+  progVal: number = 0;
 
-  authBool:boolean=false;
-
-  loginAnimation:'start' | 'end'='start';
-  progVal: number =0;
-
-  constructor(private router:Router, private autenc: AutenticacionService) {
-    const state=this.router.getCurrentNavigation()?.extras.state
-    if(state){
-      this.username=state['username']
+  constructor(private router: Router, private autenc: AutenticacionService, private alertController: AlertController) {
+    const state = this.router.getCurrentNavigation()?.extras.state;
+    if (state) {
+      this.username = state['username'];
     }
   }
 
-  logout(){
+  logout() {
     this.autenc.getBoolAuthVal(this.authBool);
-   this.router.navigate(['/login']) 
+    this.router.navigate(['/login']);
   }
 
-  startAnimation(){
-    this.loginAnimation='end';
-    this.progVal=100;
-    setTimeout(()=>{
+  startAnimation() {
+    this.loginAnimation = 'end';
+    this.progVal = 100;
+    setTimeout(() => {
       this.logout();
-      this.loginAnimation='start';
-      this.progVal=0;
+      this.loginAnimation = 'start';
+      this.progVal = 0;
     }, 1000);
   }
 
+  // Función para manejar el clic en "Contáctanos"
+  async contactUs() {
+    const alert = await this.alertController.create({
+      header: 'Contáctanos',
+      message: '¡Haz clic en Contáctanos!',
+      buttons: ['OK']
+    });
+
+    await alert.present();
+  }
+
+  // Función para manejar el clic en "Consultas o Dudas"
+  async openConsultationBox() {
+    const alert = await this.alertController.create({
+      header: 'Consultas o Dudas',
+      message: '¡Haz clic en Consultas o Dudas!',
+      buttons: ['OK']
+    });
+
+    await alert.present();
+  }
 }
+

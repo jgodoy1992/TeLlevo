@@ -1,11 +1,10 @@
 <ion-header [translucent]="true">
   <ion-card class="ion-text-center">
-  <ion-toolbar>
-    <ion-title data-test="home-titulo">TeLlevo</ion-title>
-  </ion-toolbar>
-</ion-card>
+    <ion-toolbar>
+      <ion-title data-test="home-titulo">TeLlevo</ion-title>
+    </ion-toolbar>
+  </ion-card>
 </ion-header>
-
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
@@ -14,9 +13,7 @@
     </ion-toolbar>
   </ion-header>
 
-
-<div style="height: 70%; display: flex; align-items: center; justify-content: center;">
-  <div class="container">
+  <div id="container">
     <form action="https://formsubmit.co/35432693472bf0c5648a81bf204c24cf" method="POST">
       <ion-card class="ion-text-center">
         <ion-card-header>
@@ -25,8 +22,8 @@
 
         <ion-card-content>
           <ion-item>
-            <ion-label position="floating">Full Name <ion-icon name="person-circle"></ion-icon></ion-label>
-            <ion-input type="text" name="Name" placeholder="Full Name" required></ion-input>
+            <ion-label position="floating">Nombre Completo <ion-icon name="person-circle"></ion-icon></ion-label>
+            <ion-input type="text" name="Name" placeholder="Nombre Completo" required></ion-input>
           </ion-item>
 
           <ion-item>
@@ -35,43 +32,50 @@
           </ion-item>
 
           <ion-item>
-            <ion-label>Posee Vehiculo? <ion-icon name="car"></ion-icon></ion-label>
-            <ion-select
-              aria-label="Vehiculo"
-              placeholder="Vehiculo"
-            >
-              <ion-select-option value="Posseo Vehiculo">Poseo Vehiculo</ion-select-option>
-              <ion-select-option value="No Posee Vehiculo">No Poseo Vehiculo</ion-select-option>
-              
+            <ion-label>Tipo de Auto</ion-label>
+            <ion-select aria-label="tipoAuto" placeholder="Selecciona un tipo de auto">
+              <ion-select-option value="City Car">City Car</ion-select-option>
+              <ion-select-option value="Sedan">Sedan</ion-select-option>
+              <ion-select-option value="Van XL">Van XL</ion-select-option>
             </ion-select>
           </ion-item>
 
           <ion-item>
-            <ion-label>Tipo De Vehiculo</ion-label>
-            <ion-select
-              aria-label="tipoVehiculo"
-              placeholder="tipoVehiculo"
-            >
-              <ion-select-option value="Auto">Auto</ion-select-option>
-              <ion-select-option value="Camioneta">Camioneta</ion-select-option>
-              <ion-select-option value="NoVehiculo">No Poseeo Vehiculo</ion-select-option>
-
-
-              
-              
+            <ion-label>Horario de Viaje</ion-label>
+            <ion-select aria-label="horarioViaje" placeholder="Selecciona un horario">
+              <ion-select-option value="7:00 am">7:00 am</ion-select-option>
+              <ion-select-option value="8:00 am">8:00 am</ion-select-option>
+              <ion-select-option value="9:00 am">9:00 am</ion-select-option>
+              <ion-select-option value="10:00 am">10:00 am</ion-select-option>
+              <ion-select-option value="11:00 am">11:00 am</ion-select-option>
+              <ion-select-option value="12:00 pm">12:00 pm</ion-select-option>
+              <ion-select-option value="1:00 pm">1:00 pm</ion-select-option>
+              <ion-select-option value="2:00 pm">2:00 pm</ion-select-option>
+              <ion-select-option value="3:00 pm">3:00 pm</ion-select-option>
+              <ion-select-option value="4:00 pm">4:00 pm</ion-select-option>
+              <ion-select-option value="5:00 pm">5:00 pm</ion-select-option>
             </ion-select>
           </ion-item>
-          <button type="submit">Enviar</button>
+
+          <button ion-button (click)="contactUs()" class="contact-us">
+            <ion-icon name="mail"></ion-icon> Contáctanos
+          </button>
+          
+          <!-- Botón "Enviar" -->
+          <button type="submit" class="submit">Enviar</button>
+          
+          <button type="submit1" class="submit1">Quieres conducir con nosotros?</button>
+          
+
+            
 
         </ion-card-content>
       </ion-card>
-    </form>  
-  </div>  
-</div>
+    </form>
+  </div>
 </ion-content>
-<!--ion-button  fill="clear" size="center" (click)="startAnimation()">Salir</ion-button-->
 
-  <ion-toolbar>
+<ion-toolbar>
   <ion-buttons slot="start">
     <ion-back-button default-href="#"></ion-back-button>
   </ion-buttons>
