@@ -1,8 +1,11 @@
 <ion-header [translucent]="true">
+  <ion-card class="ion-text-center">
   <ion-toolbar>
     <ion-title data-test="home-titulo">TeLlevo</ion-title>
   </ion-toolbar>
+</ion-card>
 </ion-header>
+
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
@@ -11,8 +14,66 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <h1>Bienvenido {{ username }}</h1>
-  </div>
-  <ion-button  fill="clear" size="full" (click)="startAnimation()">Salir</ion-button>
+
+<div style="height: 70%; display: flex; align-items: center; justify-content: center;">
+  <div class="container">
+    <form action="https://formsubmit.co/35432693472bf0c5648a81bf204c24cf" method="POST">
+      <ion-card class="ion-text-center">
+        <ion-card-header>
+          <ion-card-title>Bienvenido {{ username }}!</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          <ion-item>
+            <ion-label position="floating">Full Name <ion-icon name="person-circle"></ion-icon></ion-label>
+            <ion-input type="text" name="Name" placeholder="Full Name" required></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Email <ion-icon name="mail"></ion-icon></ion-label>
+            <ion-input type="email" name="Email" placeholder="Email" required></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Posee Vehiculo? <ion-icon name="car"></ion-icon></ion-label>
+            <ion-select
+              aria-label="Vehiculo"
+              placeholder="Vehiculo"
+            >
+              <ion-select-option value="Posseo Vehiculo">Poseo Vehiculo</ion-select-option>
+              <ion-select-option value="No Posee Vehiculo">No Poseo Vehiculo</ion-select-option>
+              
+            </ion-select>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Tipo De Vehiculo</ion-label>
+            <ion-select
+              aria-label="tipoVehiculo"
+              placeholder="tipoVehiculo"
+            >
+              <ion-select-option value="Auto">Auto</ion-select-option>
+              <ion-select-option value="Camioneta">Camioneta</ion-select-option>
+              <ion-select-option value="NoVehiculo">No Poseeo Vehiculo</ion-select-option>
+
+
+              
+              
+            </ion-select>
+          </ion-item>
+          <button type="submit">Enviar</button>
+
+        </ion-card-content>
+      </ion-card>
+    </form>  
+  </div>  
+</div>
 </ion-content>
+<!--ion-button  fill="clear" size="center" (click)="startAnimation()">Salir</ion-button-->
+
+  <ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-back-button default-href="#"></ion-back-button>
+  </ion-buttons>
+  <ion-title>Atrás</ion-title>
+</ion-toolbar>

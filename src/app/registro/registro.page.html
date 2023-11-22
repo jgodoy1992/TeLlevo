@@ -1,29 +1,43 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title data-test="titulo-registro">Registro de usuario</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+<div style="height: 30%; display: flex; align-items: center; justify-content: center;">
+  <ion-header [translucent]="true">
+    <ion-card class="ion-text-center">
     <ion-toolbar>
-
-      <!-- <ion-title size="large">TeLlevo</ion-title> -->
+      <ion-title data-test="titulo-registro">Registro de usuario</ion-title>
     </ion-toolbar>
+  </ion-card>
   </ion-header>
-  <h3>Bienvenido!</h3>
-  <mat-progress-bar mode="determinate" [value]="progVal" [@progressAnimation]="loginAnimation"></mat-progress-bar>
-    <ion-item>
-      <ion-label position="floating">Nombre de usuario</ion-label>
-      <ion-input data-test="username-input" #usernameInput name="username" type="text"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Correo</ion-label>
-      <ion-input data-test="email-input" #emailInput name="email" type="email"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Contraseña</ion-label>
-      <ion-input data-test="password-input" #passwordInput name="password" type="password"></ion-input>
-    </ion-item>
-  <ion-button data-test="register-submit-button" expand="full" (click)="startAnimation(usernameInput.value, emailInput.value, passwordInput.value)">Registrar</ion-button>
-</ion-content>
+  </div>
+  
+  <ion-content [fullscreen]="true">
+    <ion-header collapse="condense">
+      <ion-toolbar>
+        <!-- <ion-title size="large">TeLlevo</ion-title> -->
+      </ion-toolbar>
+    </ion-header>
+    <div style="height: 30%; display: flex; align-items: center; justify-content: center;">
+    <ion-card class="ion-text-center">
+    <h3>Bienvenido!</h3>
+    <mat-progress-bar mode="determinate" [value]="progVal" [@progressAnimation]="loginAnimation"></mat-progress-bar>
+      <ion-item>
+        <ion-label position="floating">Nombre de usuario <ion-icon name="person-circle"></ion-icon></ion-label>
+        <ion-input data-test="username-input" #usernameInput name="username" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Correo <ion-icon name="mail"></ion-icon></ion-label>
+        <ion-input data-test="email-input" #emailInput name="email" type="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Contraseña <ion-icon name="lock-closed"></ion-icon></ion-label>
+        <ion-input data-test="password-input" #passwordInput name="password" type="password"></ion-input>
+      </ion-item>
+    <ion-button data-test="register-submit-button" expand="full" (click)="startAnimation(usernameInput.value, emailInput.value, passwordInput.value)">Registrar</ion-button>
+  </ion-card>
+  </div>
+  </ion-content>
+  
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="#"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Atrás</ion-title>
+  </ion-toolbar>
