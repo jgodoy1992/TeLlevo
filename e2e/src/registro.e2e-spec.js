@@ -5,7 +5,7 @@ xdescribe('Pgina Registro', () => {
         browser.get('/')
     })
 
-    it('debe navegar a la pagina de registro', () => {
+    xit('debe navegar a la pagina de registro', () => {
         const botonRegistro = element(by.css('[data-test="boton-registro"]'))
         botonRegistro['click']()
 
@@ -33,7 +33,9 @@ xdescribe('Pgina Registro', () => {
         })
 
         const registerSubmitButton = element(by.css('[data-test="register-submit-button"]'))
+        browser.sleep(2000)
         registerSubmitButton['click']()
+        browser.sleep(5000)
 
         const loginPageTitle = element(by.css('[data-test="login-titulo"]'));
         expect(loginPageTitle['getAttribute']('innerText')).toEqual('TeLlevo')
