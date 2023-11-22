@@ -14,7 +14,7 @@ export class ApiDbService {
     })
   };
 
-  private apiUrl = 'http://192.168.0.7:8000/api/'
+  private apiUrl = 'http://192.168.100.59:8000/api/'
 
   constructor(private http: HttpClient) { }
 
