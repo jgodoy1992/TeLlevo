@@ -96,6 +96,6 @@ describe('LoginPage', () => {
 
     component.login(username, password);
 
-    expect(consoleErrorSpy).toHaveBeenCalledWith('Inicio de sension fallido');
+    expect(consoleErrorSpy).toHaveBeenCalledWith('Inicio de sension fallido', { message: errorMessage });
   });
 });
