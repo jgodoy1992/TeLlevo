@@ -40,7 +40,7 @@ button.contact-us:hover {
 }
 
 /* Boton "Enviar" */
-button.submit {
+button.Enviar {
   width: 100%; 
   padding: 1.4rem;
   cursor: pointer;
@@ -77,3 +77,10 @@ button.submit1:hover {
 button {
   margin-bottom: 10px;
 }  
+
+
+.mensaje-exito {
+  color: green;
+  font-weight: bold;
+  margin-top: 10px;
+}
