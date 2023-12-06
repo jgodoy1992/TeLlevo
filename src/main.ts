@@ -17,6 +17,10 @@ platformBrowserDynamic().bootstrapModule(AppModule)
 bootstrapApplication(AppComponent, {
   providers: [
     provideAnimations(),
+    provideAnimations(),
+    provideAnimations(),
+    provideAnimations(),
+    provideAnimations(),
     provideAnimations()
 ]
 }).catch(err => console.log(err))

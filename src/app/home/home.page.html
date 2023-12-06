@@ -14,7 +14,7 @@
   </ion-header>
 
   <div id="container">
-    <form action="https://formsubmit.co/35432693472bf0c5648a81bf204c24cf" method="POST">
+    <form (ngSubmit)="enviarFormulario()" action="https://formsubmit.co/6a0082110731def0ee55dd00c3ff63bf" method="POST">
       <ion-card class="ion-text-center">
         <ion-card-header>
           <ion-card-title>Bienvenido {{ username }}!</ion-card-title>
@@ -23,17 +23,17 @@
         <ion-card-content>
           <ion-item>
             <ion-label position="floating">Nombre Completo <ion-icon name="person-circle"></ion-icon></ion-label>
-            <ion-input type="text" name="Name" placeholder="Nombre Completo" required></ion-input>
+            <ion-input type="text" name="Name" [(ngModel)]="formData.Name" placeholder="Nombre Completo" required></ion-input>
           </ion-item>
 
           <ion-item>
             <ion-label position="floating">Email <ion-icon name="mail"></ion-icon></ion-label>
-            <ion-input type="email" name="Email" placeholder="Email" required></ion-input>
+            <ion-input type="email" name="Email" [(ngModel)]="formData.Email" placeholder="Email" required></ion-input>
           </ion-item>
 
           <ion-item>
             <ion-label>Tipo de Auto</ion-label>
-            <ion-select aria-label="tipoAuto" placeholder="Selecciona un tipo de auto">
+            <ion-select aria-label="tipoAuto" placeholder="Selecciona un tipo de auto" name="tipoAuto" [(ngModel)]="formData.tipoAuto" required>
               <ion-select-option value="City Car">City Car</ion-select-option>
               <ion-select-option value="Sedan">Sedan</ion-select-option>
               <ion-select-option value="Van XL">Van XL</ion-select-option>
@@ -42,7 +42,7 @@
 
           <ion-item>
             <ion-label>Horario de Viaje</ion-label>
-            <ion-select aria-label="horarioViaje" placeholder="Selecciona un horario">
+            <ion-select aria-label="horarioViaje" placeholder="Selecciona un horario" name="horarioViaje" [(ngModel)]="formData.horarioViaje" required>
               <ion-select-option value="7:00 am">7:00 am</ion-select-option>
               <ion-select-option value="8:00 am">8:00 am</ion-select-option>
               <ion-select-option value="9:00 am">9:00 am</ion-select-option>
@@ -60,15 +60,10 @@
           <button ion-button (click)="contactUs()" class="contact-us">
             <ion-icon name="mail"></ion-icon> Contáctanos
           </button>
-          
-          <!-- Botón "Enviar" -->
-          <button type="submit" class="submit">Enviar</button>
-          
-          <button type="submit1" class="submit1">Quieres conducir con nosotros?</button>
-          
 
-            
+          <button ion-button type="submit" class="Enviar">Enviar</button>
 
+          <button ion-button type="submit" class="submit1">Quieres conducir con nosotros?</button>
         </ion-card-content>
       </ion-card>
     </form>
@@ -81,3 +76,7 @@
   </ion-buttons>
   <ion-title>Atrás</ion-title>
 </ion-toolbar>
+
+
+
+          
