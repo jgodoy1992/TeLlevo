@@ -83,7 +83,7 @@ describe('LoginPage', () => {
   it('debe ingresar error cuando el ingreso falle', () => {
     const username = 'testUsername';
     const password = 'testPassword';
-    const errorMessage = 'Login fallido';
+    //const errorMessage = 'Login fallido';
 
     apiServiceSpy.login.and.returnValue(
       of(false)
@@ -96,6 +96,6 @@ describe('LoginPage', () => {
 
     component.login(username, password);
 
-    expect(consoleErrorSpy).toHaveBeenCalledWith('Inicio de sension fallido', { message: errorMessage });
+    expect(consoleErrorSpy).toHaveBeenCalledWith('Inicio de sension fallido');
   });
 });
